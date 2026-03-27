@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cat Munching a Cookie</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #ffe4e1; /* Soft pink background */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow: hidden;
+        }
+
+        .container {
+            text-align: center;
+            position: relative;
+        }
+
+        /* The Cat Animation */
+        .cat {
+            font-size: 100px;
+            display: inline-block;
+            animation: munch 0.5s infinite alternate ease-in-out;
+        }
+
+        /* The Cookie Animation */
+        .cookie {
+            font-size: 50px;
+            position: absolute;
+            bottom: 20px;
+            right: -10px;
+            animation: rotate-cookie 2s infinite linear;
+        }
+
+        /* Floating Text */
+        .munch-text {
+            position: absolute;
+            top: -40px;
+            width: 100%;
+            font-weight: bold;
+            color: #d2691e;
+            font-size: 24px;
+            animation: float-up 1s infinite;
+        }
+
+        /* Head bobbing/munching movement */
+        @keyframes munch {
+            from { transform: scale(1) rotate(0deg); }
+            to { transform: scale(1.1) rotate(5deg); }
+        }
+
+        /* Cookie slightly spinning */
+        @keyframes rotate-cookie {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* "Nom Nom" floating away */
+        @keyframes float-up {
+            0% { opacity: 0; transform: translateY(0); }
+            50% { opacity: 1; }
+            100% { opacity: 0; transform: translateY(-50px); }
+        }
+
+        .heart {
+            color: #ff69b4;
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="munch-text">NOM NOM! 🍪</div>
+        <div class="cat">🐱</div>
+        <div class="cookie">🍪</div>
+        <h2 style="color: #5a5a5a; margin-top: 20px;">
+            A snack for a good kitty <span class="heart">♥</span>
+        </h2>
+    </div>
+
+</body>
+</html>
